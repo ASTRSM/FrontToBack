@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,300;1,100&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* for smooth scroll when clicking on the navbar */
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+    /* font-family: 'Quicksand', sans-serif; */
+    font-family: "Trebuchet MS";
+    color: rgb(48, 48, 48);
+    height: 2000px;
+}
+
+p, table, button {
+    font-family: 'Archivo', sans-serif;
+}
+
+body > header {
+    background: url(pic/topbackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header > .top {
+    height: 80vmin;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.jumbotron {
+    margin-top: 3em;
+    font-size: 3.5rem;
+    animation: 1s ease-out 0s 1 toAbove;
+}
+
+.jumbotron h1 {
+    font-size: 9vw;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+
+
+/* mindahin katakana ke kanan tapi gk jadi */
+/* .right {
+    font-size: 0.1em;
+    color: #ffffff;
+    text-orientation: upright;
+    writing-mode: vertical-rl;
+    display: inline-block;
+    letter-spacing: 30px;
+    padding-right: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: justify;
+} */
+/* .right {
+    letter-spacing: 30px;
+} */
+
+.jumbotron p {
+    font-size: .4em;
+}
+
+.jumbotron p:last-child {
+    font-weight: lighter;
+    margin-top: 1em;
+}
+
+nav ul {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+nav a {
+    font-size: .9em;
+    font-weight: 400;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 10px;
+    color: black;
+    transition: border-radius 80ms, color 80ms ease-in-out;
+}
+
+nav a:hover  {
+    /* bold feelings without moving the elements like before (Dicoding's example)*/
+    text-shadow: 0 0.015em #000000,0 -0.015em #000000,0.01em 0 #000000,-0.01em 0 #000000;
+    border-color: black;
+}
+
+nav li {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+nav li:last-child > a {
+    border: rgb(0, 0, 0) solid 1px;
+}
+
+nav li:last-child > a:hover {
+    border-radius: 15px;
+}
+
+@keyframes toAbove {
+    0% {
+      transform: translateY(80%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+  
+
+article {
+    margin-top: 4em;
+}
+
+h2 {
+    font-size: 3em;
+    font-style: italic;
+    text-align: center;
+}
+
+.underline  {
+    background-image: linear-gradient(400deg, #fac286, #b6e3ef, #ff79a3);
+    background-position: bottom;
+    background-size: 3em 30%;
+    background-repeat: no-repeat;
+}
+
+.artist {
+    padding: 6em 2em 0 2em;
+}
+
+.center {
+    text-align: center;
+}
+
+.profile {
+    border-radius: 200px;
+    height: 200px;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.music {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    margin-top: 3em;
+    height: 400px;
+}
+
+h4 {
+    font-size: 2em;
+    letter-spacing: 3px;
+}
+
+.album {
+    height: 100%;
+    margin-right: 3em;
+    position: relative;
+}
+
+.album img {
+    height: 100%;
+    z-index: 0;
+}
+
+.spotify {
+    background: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.spotify p {
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.spotify img {
+    height: 60px;
+}
+
+.spotify:hover {
+    opacity: .8;
+}
+
+.list {
+    flex-basis: 100%;
+    margin-right: 3em;
+}
+
+table {
+    width: 100%;
+}
+
+.content {
+    background: #fff;  
+    padding: 5px;
+    display: inline-block;
+}
+
+.dots .content:first-child {
+    padding-left: 0;
+}
+
+td{
+    padding: 0px;
+    position: relative;
+}
+
+tr td:first-child {
+    padding-right: .5em;
+}
+
+tr td:last-child {
+    width: 5%; 
+}
+
+/* buat titik-titik */
+.dots{
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAACCAMAAABIdo1RAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2NEY0N0FGMzBBRjMxMUUyODY3NUY4RTM1QUI3QkFDNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2NEY0N0FGNDBBRjMxMUUyODY3NUY4RTM1QUI3QkFDNSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjY0RjQ3QUYxMEFGMzExRTI4Njc1RjhFMzVBQjdCQUM1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjY0RjQ3QUYyMEFGMzExRTI4Njc1RjhFMzVBQjdCQUM1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+vh2oXAAAAAZQTFRF////ERERcU8Z2wAAABJJREFUeNpiYGRkYGAAEQABBgAAIgAFjnN1FgAAAABJRU5ErkJggg==) left 1.1rem repeat-x;  
+}
+
+.previewCont{
+    height: 100%;
+    width: 100%;
+}
+
+.previewCont h5 {
+    height: 10%;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.preview {
+    height: 90%;
+    width: 100%;
+}
+
+aside {
+    background: white;
+    margin-top: 6em;
+}
+
+#organizer {
+    display: flex;
+    margin: 6em auto;
+    width: fit-content;
+}
+
+#organizer header {
+    padding-right: 1em;
+}
+
+.muka {
+    height: 200px;
+    background-image: linear-gradient(200deg, #fac286, #b6e3ef, #ff79a3);
+}
+
+.social {
+    height: 30px;
+}
+
+#organizer section{
+    position: relative;
+}
+
+.sosmed {
+    position: absolute;
+    width: fit-content;
+    bottom: 0;
+    right: 0;
+}
+
+#organizer section > * {
+    margin-bottom: 5px;
+}
+
+.sosmed > a {
+    margin-left: 14px;
+}
+
+.sosmed > a:hover {
+    opacity: .5;
+}
+
+#ticket {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.popupbtn {
+    font-size: 1em;
+    letter-spacing: 2px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    border: black 1px solid;
+    padding: 1.3em;
+    transition: all 300ms ease-in-out;
+    margin-bottom: 3em;
+}
+
+.popupbtn:hover {
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+#purchase {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+form h5 {
+    margin-top: 1.5em;
+}
+
+.pay {
+    margin: 5em;
+    overflow: hidden;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: #303030;
+    cursor: pointer;
+}
+
+.pay p {
+    margin: 1em 0 .2em 0;
+}
+
+.pay input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 7px;
+    border: #414141 1px solid;
+}
+
+.pay select {
+    font-size: .8em;
+    padding: 4px;
+}
+
+.methodcont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: .7em 0;
+}
+
+.method {
+    background-image: url(/pic/pay/bba6ebde4ea64a8f4dcfddaac1285f1a.jpg);
+    background-position: center;
+    background-size: cover;
+    border: none;
+    width: 5em;
+    margin-right: .5em;
+    height: 3em;
+}
+
+.method:hover {
+    opacity: 0.6;
+    cursor: pointer;
+   
+}
+
+.method:focus {
+    opacity: 0.6;
+}
+
+.tempat {
+    background-image: url(pic/pay/credit.png);
+}
+
+.credit {
+    background-image: url(pic/pay/master.png);
+}
+
+.gopay {
+    background-image: url(pic/pay/Gopay-Logo.png);
+    background-color: white;
+}
+
+.gotop {
+    position: fixed;
+    height: 40px;
+    padding: 10px;
+    margin: 30px;
+    bottom: 0;
+    right: 0;
+}
+
+.gotop a {
+    padding: 10px;
+}
+
+  
+.gotop:hover {
+opacity: 0.5;
+cursor: pointer;
+}
+
+footer {
+    padding: 10px;
+}
+
+@media screen and (max-width: 513px) {
+    .jumbotron {
+        font-size: 2em;
+        padding: 0 2rem;
+    }
+    
+    .jumbotron p {
+        font-size: .5em;
+    }
+
+    body > header {
+        background-attachment: scroll;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .music {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .music > * {
+        margin-top: 2em;
+    }
+
+    .album {
+        width: 350px;
+    }
+
+    .album img{
+        width: 100%;
+    }
+
+    .spotify img{
+        width: 60px;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .preview {
+        height: 362px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .album {
+        width: 100%;
+    }
+
+    #organizer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #organizer section {
+        text-align: center;
+        margin-top: 1em;
+    }
+
+    #organizer section > * {
+        margin-top: .5rem;
+    }
+
+    .sosmed {
+        position: relative;
+        margin: 1rem auto;
+        padding-top: 1em;
+    }
+
+    .sosmed > a {
+        margin-right: 14px;
+    }
+
+    .pay { 
+     margin: 10px;
+    }
+}
